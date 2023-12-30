@@ -1,6 +1,7 @@
 
 fun main(args: Array<String>) {
     println("Hello World!")
+    // Calling the dataTypes function
     dataTypes()
     println("Result of add(5,10) = ${add(5, 10)}")
 }
