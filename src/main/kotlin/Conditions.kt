@@ -10,11 +10,14 @@ fun main(args: Array<String>) {
 /**
  * Conditionals
  */
+
 fun abs(a: Int): Int {
+    // fun abs(a: Int): Int = if (a > 0) a else -a
     return if (a > 0) {
         a
     } else {
         -a
+        // -a gives the opposite of a
     }
 }
 
