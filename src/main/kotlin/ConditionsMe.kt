@@ -18,8 +18,9 @@ fun main() {
 
 fun whoIsThis(name: String): String {
     return if (name.equals("Kristina")) {
+        // println() - returns a Unit and not a String, the function is set to return String as return type
         "Welcome, $name!"
-    } else if (name == " ") {      // different way to compare values
+    } else if (name == " ") {
         "Bye!"
     } else {
         "Bye, $name!"
@@ -27,7 +28,7 @@ fun whoIsThis(name: String): String {
 }
 fun howOld(age: String?, name:String): String {
     // if I have nullable type like "String?", I need to handle null in the condition as well
-    return if (age.equals("21")  && age != null) {
+    return if (age.equals("30")  && age != null) {
         "Perfect! Welcome to the Matrix, $name"
     } else {
         "Bye!"
