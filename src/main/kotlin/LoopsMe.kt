@@ -8,10 +8,10 @@ fun main() {
 fun myFirstLoop(limit: Int) {
     var num = 0
     while (num <= limit) {
-        println(num)
-        // num = num + num
+        // println(num)
+         // num = num + num
         // num = 0 + 0 ; which leads to an infinite loop
-        num ++
+         num ++
     }
 }
 

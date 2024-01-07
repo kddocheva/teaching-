@@ -27,8 +27,4 @@ fun main(args: Array<String>) {
     // val randomThing: String = 'K'
     val randomThing = 'K'
     println(randomThing)
-
-
-
-
 }
