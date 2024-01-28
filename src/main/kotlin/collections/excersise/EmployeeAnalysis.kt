@@ -3,19 +3,22 @@ package collections.excersise
 data class Employee(val id: Int, val name: String, val position: String, val salary: Double)
 
 fun filterByPosition(employees: List<Employee>, position: String): List<Employee> {
-    TODO("Implement")
+//    val developers = filterByPosition(employees, "Developer")
+//    println("\nDevelopers:")
+//    developers.forEach { println(it) }
+    return employees.filter { it.position == position }
 }
 
 fun calculateAverageSalary(employees: List<Employee>): Double {
-    TODO("Implement")
+    return employees.sumOf {  it.salary }
 }
 
 fun calculateAvgSalaryForEachDepartment(employees: List<Employee>): List<Pair<String, Double>> {
-    TODO("Implement")
+
 }
 
 fun findHighestPaidEmployee(employees: List<Employee>): Employee? {
-    TODO("Implement")
+    return employees.maxByOrNull {  it.salary }
 }
 
 
