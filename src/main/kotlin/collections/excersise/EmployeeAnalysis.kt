@@ -14,7 +14,7 @@ fun calculateAverageSalary(employees: List<Employee>): Double {
 }
 
 fun calculateAvgSalaryForEachDepartment(employees: List<Employee>): List<Pair<String, Double>> {
-
+    return employees.groupBy { it.position }
 }
 
 fun findHighestPaidEmployee(employees: List<Employee>): Employee? {
