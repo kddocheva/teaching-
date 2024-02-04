@@ -15,6 +15,9 @@ fun calculateAverageSalary(employees: List<Employee>): Double {
 
 fun calculateAvgSalaryForEachDepartment(employees: List<Employee>): List<Pair<String, Double>> {
     return employees.groupBy { it.position }
+        .map {
+            Pair(it.key, calculateAverageSalary(it.value))
+        }
 }
 
 fun findHighestPaidEmployee(employees: List<Employee>): Employee? {
@@ -30,22 +33,22 @@ fun main() {
         Employee(4, "Eva", "Analyst", 55000.0),
         Employee(5, "Charlie", "Manager", 62000.0)
     )
-
-    // Print original list
-    println("Original List of Employees:")
-    employees.forEach { println(it) }
-
-    // Filter by position
-    val developers = filterByPosition(employees, "Developer")
-    println("\nDevelopers:")
-    developers.forEach { println(it) }
-
-    // Calculate average salary
-    val averageSalary = calculateAverageSalary(employees)
-    println("\nAverage Salary: $averageSalary")
-
-    // Find highest paid employee
-    val highestPaidEmployee = findHighestPaidEmployee(employees)
-    println("\nHighest Paid Employee:")
-    println(highestPaidEmployee)
+    calculateAvgSalaryForEachDepartment(employees)
+//    // Print original list
+//    println("Original List of Employees:")
+//    employees.forEach { println(it) }
+//
+//    // Filter by position
+//    val developers = filterByPosition(employees, "Developer")
+//    println("\nDevelopers:")
+//    developers.forEach { println(it) }
+//
+//    // Calculate average salary
+//    val averageSalary = calculateAverageSalary(employees)
+//    println("\nAverage Salary: $averageSalary")
+//
+//    // Find highest paid employee
+//    val highestPaidEmployee = findHighestPaidEmployee(employees)
+//    println("\nHighest Paid Employee:")
+//    println(highestPaidEmployee)
 }
