@@ -13,8 +13,17 @@ fun calculateAverageSalary(employees: List<Employee>): Double {
     return employees.sumOf {  it.salary }
 }
 
-fun calculateAvgSalaryForEachDepartment(employees: List<Employee>): List<Pair<String, Double>> {
-    return employees.groupBy { it.position }
+fun calculateAvgSalaryForEachDepartment(employees: List<Employee>): List<Pair<String, Double>> {     // List<Any> read more
+    val departmentAndPeople: Map<String, List<Employee>> = employees.groupBy { it.position }
+    for (key in departmentAndPeople.keys) {
+        val peopleInDepartment: List<Employee>? = departmentAndPeople[key]  // ["hfshf"]
+        val avSalaryOfDep = calculateAverageSalary(peopleInDepartment!!)
+        println("$key $avSalaryOfDep")
+        Pair(key, avSalaryOfDep)
+    }
+    return departmentAndPeople.map {
+        Pair (it.key, calculateAverageSalary(it.value))
+    }
 }
 
 fun findHighestPaidEmployee(employees: List<Employee>): Employee? {
@@ -30,6 +39,7 @@ fun main() {
         Employee(4, "Eva", "Analyst", 55000.0),
         Employee(5, "Charlie", "Manager", 62000.0)
     )
+    calculateAvgSalaryForEachDepartment(employees)
 
     // Print original list
     println("Original List of Employees:")
