@@ -35,7 +35,15 @@ internal class ExerciseOne {
     @Test
     fun filterAnimalsToDogs() {
         val result = animals.filterIsInstance<Dog>()
-        val expectedResult: List<Animal> = animals
+        val expectedResult: List<Animal> =  listOf(
+            Dog("Barney", 15),
+            Dog("Barney", 1),
+            Dog("Samson", 4),
+            Dog("Kamran", 21),
+            Dog("Kamran", 26),
+            Dog("Jack", 26),
+            Dog("Jimmy", 53)
+        )
         assertContentEquals(result, expectedResult)
     }
 
