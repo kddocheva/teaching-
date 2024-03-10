@@ -9,6 +9,7 @@ fun main() {
 
 // Generic functions
 fun <T> printItem(item: T) {
+//    item.
     println("Adding item to database: $item")
 }
 

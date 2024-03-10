@@ -25,7 +25,7 @@ internal class ExerciseOne {
     @Test
     fun mapNullableListOfIntsToNonNulls() {
         val numbers: List<Int?> = listOf(1, null, 3, null, 6, null)
-        val result = TODO()
+        val result = numbers.filterNotNull()
         val expectedResult = listOf(1, 3, 6)
         assertContentEquals(result, expectedResult)
     }
@@ -34,7 +34,7 @@ internal class ExerciseOne {
     // Two ways, once with built-in method, one with filter with when (is Dog)
     @Test
     fun filterAnimalsToDogs() {
-        val result = TODO("Results")
+        val result = animals.filterIsInstance<Dog>()
         val expectedResult: List<Animal> = animals
         assertContentEquals(result, expectedResult)
     }
