@@ -66,8 +66,15 @@ internal class ExerciseOne {
 
     @Test
     fun fibonacciSequence() {
-        TODO()
-//        write a method to return a value
+        assertEquals(fibElement(5), 5)
+        assertEquals(fibElement(9), 34)
+        assertEquals(fibElement(12), 144)
+        assertEquals(fibElement(16), 987)
+    }
+
+    fun fibElement(n: Int): Int {
+        TODO("RETURN n-th element")
+    //        write a recursive algorithm
     }
 
     @Test
