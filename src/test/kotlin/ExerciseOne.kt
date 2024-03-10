@@ -34,7 +34,11 @@ internal class ExerciseOne {
     // Two ways, once with built-in method, one with filter with when (is Dog)
     @Test
     fun filterAnimalsToDogs() {
-        val result = animals.filterIsInstance<Dog>()
+        val result: List<Dog> = animals.filterIsInstance<Dog>()
+        val results2: List<Animal> = animals.filter { when(it) {
+            is Dog -> true
+            else -> false
+        } }
         val expectedResult: List<Animal> =  listOf(
             Dog("Barney", 15),
             Dog("Barney", 1),
@@ -45,11 +49,12 @@ internal class ExerciseOne {
             Dog("Jimmy", 53)
         )
         assertContentEquals(result, expectedResult)
+        assertContentEquals(results2, expectedResult)
     }
 
     @Test
     fun calculateAmountOfEachDog() {
-        val result: Map<String, Int> = TODO()
+        val result: Map<String, Int> = animals.filterIsInstance<Dog>().groupBy { it.name }.mapValues { it.value.size }
         val expectedResult = mapOf("Barney" to 2,
             "Samson" to 1,
             "Kamran" to 2,
@@ -62,6 +67,7 @@ internal class ExerciseOne {
     @Test
     fun fibonacciSequence() {
         TODO()
+//        write a method to return a value
     }
 
     @Test
